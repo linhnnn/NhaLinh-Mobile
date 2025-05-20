@@ -25,6 +25,13 @@ public class EmployeeManagementActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+
+
+    public void open_employee_healthcare_activity(View view) {
+        Intent intent=new Intent(EmployeeManagementActivity.this, EmployeeHealthcareActivity.class);
+        startActivity(intent);
+    }
 }
 
 

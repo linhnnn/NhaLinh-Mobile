@@ -1,82 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.nhlinh.k22411csampleproject.EmployeeManagementActivity">
 
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:stretchColumns="*">
 
-        <TextView
-            android:id="@+id/txtTitle"
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/title_add_employee_title"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent" >
 
-        <Button
-            android:id="@+id/btnAddEmployee"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="@string/title_add_employee" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <!-- 👇 Thêm nhiều dòng giả lập danh sách nhân viên -->
-        <TextView
+                <ImageView
+                    android:onClick="open_employee_healthcare_activity"
+                    android:id="@+id/imageHealthcare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_doctor" />
+
+                <TextView
+                    android:onClick="open_employee_healthcare_activity"
+                    android:id="@+id/textHealthcare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C6D4FF"
+                    android:text="@string/title_healthcare"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageEmployeeSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/ic_employee_salary" />
+
+                <TextView
+                    android:id="@+id/textEmployeeSalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C6D4FF"
+                    android:text="@string/title_salary"
+                    android:textAlignment="center" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="• Employee A"
-            android:paddingVertical="8dp" />
+            android:layout_height="match_parent" />
 
-        <TextView
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="• Employee B"
-            android:paddingVertical="8dp" />
+            android:layout_height="match_parent" />
 
-        <TextView
+        <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="• Employee C"
-            android:paddingVertical="8dp" />
+            android:layout_height="match_parent" />
+    </TableLayout>
 
-        <!-- iả lập thêm nhiều dòng nữa -->
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee D" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee E" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee F" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee G" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee H" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee I" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee J" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee D" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee E" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee F" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee G" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee H" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee I" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee J" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee D" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee E" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee F" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee G" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee H" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee I" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee J" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee D" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee E" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee F" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee G" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee H" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee I" android:paddingVertical="8dp"/>
-        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee J" android:paddingVertical="8dp"/>
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>
