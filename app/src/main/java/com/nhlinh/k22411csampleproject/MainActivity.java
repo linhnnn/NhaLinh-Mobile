@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgProduct;
     TextView txtProduct;
 
+    ImageView imgAdvancedProduct;
+    TextView txtAdvancedProduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +87,27 @@ public class MainActivity extends AppCompatActivity {
                 openProductManagementActivity();
 
             }
+
         });
+        imgAdvancedProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAdvancedProductManagementActivity();
+            }
+        });
+        txtAdvancedProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAdvancedProductManagementActivity();
+
+            }
+        });
+    }
+
+    private void openAdvancedProductManagementActivity() {
+        Intent intent = new Intent (MainActivity.this, AdvancedProductManagementActivity.class);
+        // đối số thứ nhất là màn hình Login - là this
+        startActivity(intent);
     }
 
     private void openProductManagementActivity() {
@@ -112,6 +134,8 @@ public class MainActivity extends AppCompatActivity {
         txtCustomer=findViewById(R.id.txtCustomer);
         imgProduct=findViewById(R.id.imgProduct);
         txtProduct=findViewById(R.id.txtProduct);
+        imgAdvancedProduct=findViewById(R.id.imgAdvancedProduct);
+        txtAdvancedProduct=findViewById(R.id.txtAdvancedProduct);
 
     }
 }

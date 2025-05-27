@@ -11,6 +11,9 @@ public class Product implements Serializable {
     private String name;
     private int quantity;
     private double price;
+    private int cate_id;
+    private String description;
+    private int image_id;
 
     public Product() {
     }
@@ -95,6 +98,5 @@ public class Product implements Serializable {
         this.image_id = image_id;
     }
 
-    private int cate_id;
-    private String description;
-    private int image_id;}
+
+}

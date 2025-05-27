@@ -1,13 +1,19 @@
 package com.nhlinh.k22411csampleproject;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -53,8 +59,18 @@ public class ProductManagementActivity extends AppCompatActivity {
 
             }
         });
+        lvProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Product p = adapterProduct.getItem(position);
+                displayProductDetailActivity(p);
+            }});
     }
-
+    private void displayProductDetailActivity(Product p) {
+        Intent intent = new Intent(ProductManagementActivity.this, ProductDetailActivity.class);
+        intent.putExtra("SELECTED_PRODUCT",p);
+        startActivity(intent);
+    }
     private void displayProductByCategory(Category c) {
         //xoa du lieu cu trong listview di:
         adapterProduct.clear();
@@ -80,4 +96,29 @@ public class ProductManagementActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu_customer,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.menu_new_product){
+            Toast.makeText(ProductManagementActivity.this,"Mở màn hình thêm mới sản phẩm",Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(ProductManagementActivity.this, CustomerDetailActivity.class);
+            startActivity(intent);
+
+        }
+        else if (item.getItemId()==R.id.menu_help) {
+            Toast.makeText(ProductManagementActivity.this,"Mở website hướng dẫn suwr dụng",Toast.LENGTH_LONG).show();
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
